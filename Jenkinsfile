@@ -6,7 +6,7 @@ pipeline {
         stage ("Clone") {
             steps {
                 echo "Cloning the code"
-                git url: 'https://github.com/kiranrajeev1/nodejs-docker-app.git', branch: 'main'
+                git url: 'https://github.com/abhinavellath/nodejs-docker-app.git', branch: 'main'
                 echo "Cloning successful"
             }
         }
@@ -14,7 +14,7 @@ pipeline {
         stage ("Build") {
             steps {
                 echo "Building the Docker image"
-                sh "docker build -t kiran700/nodejs-login-app:latest ."
+                sh "docker build -t abhinavellath/nodejs-login-app:latest ."
                 echo "Build successful"
             }
         }
@@ -33,7 +33,7 @@ pipeline {
         
         stage('Push Docker Image') {
             steps {
-                sh 'docker push kiran700/nodejs-login-app:latest'
+                sh 'docker push abhinavellath/nodejs-login-app:latest'
             }
         }
 
